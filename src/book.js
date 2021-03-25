@@ -1,5 +1,5 @@
-function createTitle(title) {
-  return `The ${title}`
+function createTitle(bookTitle) {
+  return `The ${bookTitle}`
 }
 
 function buildMainCharacter(name,age,pronouns) {
@@ -27,6 +27,14 @@ function saveReview(reviewText, reviews) {
   }
 }
 
+//calculate page count function
+//get number of characters in title
+//multiply characters by 20 to add 20 pages per letter
+//tried first with createTitle(bookTitle).length and did not work, why?
+function calculatePageCount(bookTitle, bookPageCount) {
+  var bookPageCount = bookTitle.length * 20;
+  return bookPageCount
+}
 
 
 
@@ -34,7 +42,7 @@ module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
-  // calculatePageCount,
+  calculatePageCount,
   // writeBook,
   // editBook
 }
