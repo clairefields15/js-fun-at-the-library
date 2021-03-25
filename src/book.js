@@ -31,17 +31,17 @@ function saveReview(reviewText, reviews) {
 //get number of characters in title
 //multiply characters by 20 to add 20 pages per letter
 //tried first with createTitle(bookTitle).length and did not work, why?
-function calculatePageCount(bookTitle, bookPageCount) {
-  var bookPageCount = bookTitle.length * 20;
-  return bookPageCount
+function calculatePageCount(bookTitle) {
+  bookTitle = bookTitle.length * 20;
+  return bookTitle
 }
 
-function writeBook(title,mainCharacter,pageCount) {
+function writeBook(title,mainCharacter,genre) {
 var book = {
   title: title,
   mainCharacter: mainCharacter,
-  pageCount: pageCount,
-  genre: "fantasy"
+  genre: genre,
+  pageCount: calculatePageCount(title)
 }
 return book
 }
