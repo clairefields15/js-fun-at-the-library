@@ -1,6 +1,12 @@
+var sciFiShelf= [];
+
+function shelfBook(bookTitle, shelf) {
+
+}
+
 
 module.exports = {
-  // shelfBook,
+  shelfBook,
   // unshelfBook,
   // listTitles,
   // searchShelf
