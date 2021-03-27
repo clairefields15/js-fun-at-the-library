@@ -24,16 +24,14 @@ function unshelfBook(title, shelf) {
 //to get titles needs to access book.title
 //only parameter is shelf, when we access shelf we see book
 //need to loop tolookat whole array
-var titles = [];
 
 function listTitles(shelf){
+  var titles = [];
   for(var i = 0 ; i < shelf.length ; i ++){
   titles.push(shelf[i].title)
   }
 return titles.join(', ')
 }
-
-
 
 
 //THIS works for first test, fails second
@@ -48,15 +46,16 @@ return titles.join(', ')
 //should tell us if a title is on the shelf, should return a boolean
 //takes two parameters- shelf which is an array of objects and the title of the book
 //loop through the shelf array and search for title = book.title return true
-
+//return stops theloop but i need tocheck all the indexes
 function searchShelf(shelf, title) {
-for(var i = 0; i < shelf.length ; i++)
-  if (shelf[i].title = title){
-    console.log(shelf[i])
-    return true
+  var isOnShelf= false;
+for(var i = 0; i < shelf.length ; i++){
+  if (shelf[i].title === title){
+    isOnShelf= true
   } else {
-    return false
+
   }
+} return isOnShelf
 }
 
 module.exports = {
