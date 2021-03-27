@@ -15,15 +15,26 @@ function addBook(library, bookTitle) {
   library.shelves[bookTitle.genre].push(bookTitle)
 }
 
-//brackets allow you to use a access properties dynamically!!
+
+//this passes first test but not second
+//each shelf has one book to start
+//for the start of last test, fantasy has Dracula, others have 0
+//test is looking for fifth season, is not on the fantasy shelf
+
 function checkoutBook(library, bookTitle, genre) {
-//iterate through the genre array
-for(var i = 0 ; i < genre.length ; i++) {
-  //access the genre array in the object library and remove the bookTitle from the array
-    library.shelves[genre].splice(bookTitle[i], 1)
+  //loops though the genre array
+for(var i = 0 ; i < library.shelves[genre].length ; i++) {
+  //looks at which titles are in the array
+  var title = library.shelves[genre][i].title
+  //if whats in the array matches the book we are looking for
+  if (title === bookTitle) {
+    //remove it from the array and check it out
+    library.shelves[genre].splice(genre[i], 1)
+      return `You have now checked out ${bookTitle} from the ${library.name}`
+    } else {
+      return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`
+    }
   }
-  //return a string "you have checked out"
-  return `You have now checked out ${bookTitle} from the ${library.name}`
 }
 
 
@@ -32,3 +43,5 @@ module.exports = {
   addBook,
   checkoutBook
 };
+
+//brackets allow you to use a access object properties dynamically!!

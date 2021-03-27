@@ -48,10 +48,10 @@ return titles.join(', ')
 //loop through the shelf array and search for title = book.title return true
 //return stops theloop but i need tocheck all the indexes
 function searchShelf(shelf, title) {
-  var isOnShelf= false;
+  var isOnShelf = false;
 for(var i = 0; i < shelf.length ; i++){
   if (shelf[i].title === title){
-    isOnShelf= true
+    isOnShelf = true
   } else {
 
   }
