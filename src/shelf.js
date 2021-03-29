@@ -1,9 +1,8 @@
 function shelfBook(book, shelf) {
   if(shelf.length <= 2) {
     shelf.unshift(book)
-  }else {
-    return
   }
+  return
 }
 
 //should remove a book from the shelf by name
@@ -15,8 +14,8 @@ function shelfBook(book, shelf) {
 function unshelfBook(title, shelf) {
  for(var i = 0 ; i < shelf.length ; i ++){
    if(shelf[i].title.includes(title)){
-     shelf.splice(i, 1)
-   }
+    shelf.splice(i, 1)
+    }
  }
 }
 
@@ -28,20 +27,11 @@ function unshelfBook(title, shelf) {
 function listTitles(shelf){
   var titles = [];
   for(var i = 0 ; i < shelf.length ; i ++){
-  titles.push(shelf[i].title)
-  }
-return titles.join(', ')
+    titles.push(shelf[i].title)
+    }
+  return titles.join(', ')
 }
 
-
-//THIS works for first test, fails second
-// function searchShelf(shelf, title) {
-//   if (titles.includes(title)){
-//     return true
-//   } else {
-//     return false
-//   }
-// }
 
 //should tell us if a title is on the shelf, should return a boolean
 //takes two parameters- shelf which is an array of objects and the title of the book
@@ -52,10 +42,8 @@ function searchShelf(shelf, title) {
 for(var i = 0; i < shelf.length ; i++){
   if (shelf[i].title === title){
     isOnShelf = true
-  } else {
-
-  }
-} return isOnShelf
+    }
+  } return isOnShelf
 }
 
 module.exports = {
