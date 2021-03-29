@@ -24,11 +24,11 @@ function calculatePageCount(bookTitle) {
   return bookPageCount
 }
 
-function writeBook(bookTitle, character, genre) {
+function writeBook(title, character, genre) {
   var book = {
-    title: bookTitle,
+    title: title,
     mainCharacter: character,
-    pageCount: calculatePageCount(bookTitle),
+    pageCount: calculatePageCount(title),
     genre: genre,
   }
   return book
