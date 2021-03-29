@@ -11,22 +11,17 @@ function createLibrary(libraryName) {
   return library
 }
 
-function addBook(library, bookTitle) {
-  library.shelves[bookTitle.genre].push(bookTitle)
+function addBook(library, book) {
+  library.shelves[book.genre].push(book)
 }
 
-
 //this passes first test but not second
-//each shelf has one book to start
-//for the start of last test, fantasy has Dracula, others have 0
-//test is looking for fifth season, is not on the fantasy shelf
-
 function checkoutBook(library, bookTitle, genre) {
   //loops though the genre array
 for(var i = 0 ; i < library.shelves[genre].length ; i++) {
-  //looks at which titles are in the array
   var title = library.shelves[genre][i].title
-  //if whats in the array matches the book we are looking for
+  console.log("this is loop number >>" + i)
+  //if title at that index matches bookTitle
   if (title === bookTitle) {
     //remove it from the array and check it out
     library.shelves[genre].splice(genre[i], 1)
@@ -43,5 +38,3 @@ module.exports = {
   addBook,
   checkoutBook
 };
-
-//brackets allow you to use a access object properties dynamically!!
